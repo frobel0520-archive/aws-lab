@@ -30,6 +30,7 @@ export function ToolLoopLab() {
             <button
               type="button"
               aria-current={stepIndex === index ? "step" : undefined}
+              aria-label={`第 ${stepIndex + 1} 步：${step.title}`}
               className={stepIndex < index ? "done" : undefined}
               onClick={() => setIndex(stepIndex)}
             >
