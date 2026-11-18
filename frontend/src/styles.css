@@ -160,14 +160,14 @@ code {
   display: block;
   margin-top: 6px;
   color: var(--ink-2);
-  font: 9px var(--mono);
+  font: 11px var(--mono);
   letter-spacing: 0.08em;
 }
 
 .nav-label {
   margin: 30px 0 9px;
   color: var(--ink-2);
-  font: 8px var(--mono);
+  font: 11px var(--mono);
   letter-spacing: 0.11em;
   text-transform: uppercase;
 }
@@ -201,7 +201,7 @@ code {
   flex: none;
   width: 19px;
   color: var(--accent);
-  font: 10px var(--mono);
+  font: 11px var(--mono);
 }
 
 .sidebar li a[aria-current="page"] {
@@ -245,7 +245,7 @@ code {
   display: flex;
   gap: 10px;
   color: var(--ink-2);
-  font: 9px var(--mono);
+  font: 11px var(--mono);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -325,7 +325,7 @@ code {
 .eyebrow,
 .kicker {
   color: var(--accent);
-  font: 500 9px var(--mono);
+  font: 500 11px var(--mono);
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -351,7 +351,7 @@ code {
   padding: 1px 8px;
   color: var(--ink-2);
   border: 1px solid var(--rule);
-  font: 500 10px var(--mono);
+  font: 500 11px var(--mono);
   white-space: nowrap;
   vertical-align: middle;
 }
@@ -457,7 +457,7 @@ code {
 .visual-label {
   position: relative;
   color: #bad0cf;
-  font: 9px var(--mono);
+  font: 11px var(--mono);
   letter-spacing: 0.12em;
 }
 
@@ -483,7 +483,7 @@ code {
   padding: 8px 0;
   border-top: 1px solid rgba(241, 236, 222, 0.3);
   color: #cfe0de;
-  font: 10px var(--mono);
+  font: 11px var(--mono);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -501,7 +501,7 @@ code {
   display: flex;
   justify-content: space-between;
   color: #aac2c2;
-  font: 10px var(--mono);
+  font: 11px var(--mono);
 }
 
 .visual-footer b {
@@ -810,7 +810,7 @@ code {
 .pager span {
   margin-bottom: 4px;
   color: var(--accent);
-  font: 9px var(--mono);
+  font: 11px var(--mono);
   letter-spacing: 0.1em;
 }
 
@@ -849,7 +849,7 @@ tbody tr:last-child td {
 }
 
 thead th {
-  font: 500 10px var(--mono);
+  font: 500 11px var(--mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background: var(--surface-2);
@@ -2031,11 +2031,21 @@ select {
     transform: rotate(90deg);
   }
 
+  /* 手機上其他步驟只留編號，目前步驟展開顯示標題，才知道現在在哪一步 */
   .stepper {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    display: flex;
   }
 
-  .step-title {
+  .stepper li {
+    flex: 0 0 44px;
+  }
+
+  .stepper li:has([aria-current="step"]) {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .stepper button:not([aria-current="step"]) .step-title {
     display: none;
   }
 
